@@ -2,7 +2,7 @@
 layout: default
 ---
 
-Hey ! This is Thomas George, studying deep learning at [MILA](https://mila.umontreal.ca/).
+Hey ! This is Thomas George, studying deep learning at [MILA](https://mila.umontreal.ca/) under the supervision of [Pascal Vincent](http://www.iro.umontreal.ca/~vincentp/).
 
 ## Notes for course ift6268 computer vision
 Here are some notes I took while reading papers related to vision during the course ift6268 by Roland Memisevitch:
