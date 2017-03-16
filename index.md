@@ -9,7 +9,7 @@ Here are some notes I took while reading papers related to vision during the cou
 <ul>
   {% for post in site.categories.ift6268 %}
     <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
+      <a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date_to_string }})
     </li>
   {% endfor %}
 </ul>
@@ -19,7 +19,7 @@ Here are some blog posts I wrote for the project in the deep learning course ift
 <ul>
   {% for post in site.categories.ift6266 %}
     <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
+      <a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date_to_string }})
     </li>
   {% endfor %}
 </ul>
