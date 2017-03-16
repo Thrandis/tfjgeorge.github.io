@@ -3,4 +3,10 @@
 }
 header {
 	position: absolute;
+	padding-left: 0;
+	padding-right: 0;
+	@media print, screen and (max-width: 480px) {
+		position: relative;
+    		padding: 5px 0px;
+	}
 }
