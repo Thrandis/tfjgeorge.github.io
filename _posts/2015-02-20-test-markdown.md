@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Test markdown
+comments: true
 subtitle: Each post also has a subtitle
 ---
 
