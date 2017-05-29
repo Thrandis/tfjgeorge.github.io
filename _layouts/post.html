@@ -11,6 +11,11 @@
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    {% if page.lyx %}
+	<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+    {% endif %}
 
   </head>
   <body>
@@ -40,6 +45,10 @@
         <ul></ul>
       </nav>
       <section>
+	{% if page.draft %}
+	<blockquote>This note is still a draft, please do not share publicly.</blockquote>
+
+	{% endif %}
         {{ content }}
 
         {% if page.comments %}
