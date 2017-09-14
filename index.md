@@ -4,6 +4,17 @@ layout: default
 
 Hey ! This is Thomas George, studying deep learning at [MILA](https://mila.umontreal.ca/) under the supervision of [Pascal Vincent](http://www.iro.umontreal.ca/~vincentp/).
 
+I am interested in optimization applied to (deep) neural networks. This website is intended as sharing some notes or short articles that I wrote during my exploration of deep learning.
+
+## Notes
+<ul>
+  {% for post in site.categories.note %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date_to_string }})
+    </li>
+  {% endfor %}
+</ul>
+
 ## Notes for course ift6268 computer vision
 Here are some notes I took while reading papers related to vision during the course ift6268 by Roland Memisevitch:
 <ul>

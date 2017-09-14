@@ -4,6 +4,7 @@ title: Demystifying Natural Neural Networks
 comments: true
 lyx: true
 draft: true
+categories: [note]
 ---
 <!--starthtml-->
 <h1 class="title">
@@ -101,7 +102,7 @@ The usual gradient descent algorithm can be formulated as the minimization of th
 <span class="MathJax_Preview">
 <script type="math/tex;mode=display">
 \begin{eqnarray*}
-\Delta\theta & = & \text{argmin}_{\Delta\theta}\left\{ \Delta\theta^{T}\nabla\mathcal{L}+\frac{\epsilon}{2}\left\Vert \Delta\theta\right\Vert ^{2}\right\} 
+\Delta\theta & = & \text{argmin}_{\Delta\theta}\left\{ \Delta\theta^{T}\nabla\mathcal{L}+\frac{\epsilon}{2}\left\Vert \Delta\theta\right\Vert ^{2}\right\}
 \end{eqnarray*}
 </script>
 
@@ -124,7 +125,7 @@ We use the notation <span class="MathJax_Preview"><script type="math/tex">
 <span class="MathJax_Preview">
 <script type="math/tex;mode=display">
 \begin{eqnarray*}
-\Delta\theta & = & \text{argmin}_{\Delta\theta}\left\{ \Delta\theta^{T}\nabla\mathcal{L}+\frac{\epsilon}{2}\left\Vert \Delta\theta\right\Vert ^{2}+\frac{\lambda}{2}\Delta\theta^{T}\mathbf{F}\Delta\theta\right\} 
+\Delta\theta & = & \text{argmin}_{\Delta\theta}\left\{ \Delta\theta^{T}\nabla\mathcal{L}+\frac{\epsilon}{2}\left\Vert \Delta\theta\right\Vert ^{2}+\frac{\lambda}{2}\Delta\theta^{T}\mathbf{F}\Delta\theta\right\}
 \end{eqnarray*}
 </script>
 
