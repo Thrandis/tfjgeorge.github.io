@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Title
+title: Algebra of 2nd order methods in neural networks
 comments: true
 lyx: true
 draft: true
@@ -329,7 +329,7 @@ h_{l}^{T} & 1\end{array}\right)\otimes J_{a_{l}}^{T}DJ_{a_{l}}\right]\label{eq:a
  & = & \mathbb{E}\left[\left(\begin{array}{cc}
 h_{l}h_{l}^{T} & h_{l}\\
 h_{l}^{T} & 1
-\end{array}\right)\otimes J_{a_{l}}^{T}DJ_{a_{l}}\right]\nonumber 
+\end{array}\right)\otimes J_{a_{l}}^{T}DJ_{a_{l}}\right]\nonumber
 \end{eqnarray}
 </script>
 
@@ -540,7 +540,7 @@ A
 </span>) and the bias (block <span class="MathJax_Preview"><script type="math/tex">
 2,2
 </script>
-</span>), and 2 cross-terms that explicit their interactions. 
+</span>), and 2 cross-terms that explicit their interactions.
 </p>
 <p class="Indented">
 TODO motivate the separation of <span class="MathJax_Preview"><script type="math/tex">
@@ -893,4 +893,3 @@ References
 </p>
 
 </p>
-
