@@ -3,7 +3,7 @@ layout: post
 title: Algebra of 2nd order methods in neural networks
 comments: true
 lyx: true
-draft: true
+draft: false
 categories: [note]
 ---
 <h1 class="title">
@@ -12,6 +12,18 @@ The algebra of second order methods in neural networks
 <h2 class="author">
 Thomas George
 </h2>
+<p class="Unindented">
+This notes gives the derivations for 2nd order matrices: the Fisher Information Matrix, and the Gauss-Newton approximation of the Hessian. In particular we highlight 2 centering properties that follow from the local structure of this matrices:
+</p>
+<ul>
+<li>
+we should always center our weight updates (see section <a class="Reference" href="#subsec:Updating-the-weight">↓</a>)
+</li>
+<li>
+we should normalize using the (centered) covariance matrix of the activation of each layer (see section <a class="Reference" href="#subsec:KFAC-inversion">↓</a>)
+</li>
+
+</ul>
 <h1 class="Section">
 Problem setup
 </h1>
@@ -329,7 +341,7 @@ h_{l}^{T} & 1\end{array}\right)\otimes J_{a_{l}}^{T}DJ_{a_{l}}\right]\label{eq:a
  & = & \mathbb{E}\left[\left(\begin{array}{cc}
 h_{l}h_{l}^{T} & h_{l}\\
 h_{l}^{T} & 1
-\end{array}\right)\otimes J_{a_{l}}^{T}DJ_{a_{l}}\right]\nonumber
+\end{array}\right)\otimes J_{a_{l}}^{T}DJ_{a_{l}}\right]\nonumber 
 \end{eqnarray}
 </script>
 
@@ -491,7 +503,7 @@ B
 </span>.
 </p>
 <h2 class="Subsection">
-KFAC inversion
+KFAC inversion<a class="Label" name="subsec:KFAC-inversion"> </a>
 </h2>
 <p class="Unindented">
 We now have a factorized approximate expression for <span class="MathJax_Preview"><script type="math/tex">
@@ -534,28 +546,16 @@ b
 </span> in section <a class="Reference" href="#subsec:Expressions-for-the">↑</a> which gives a slightly different expression. Thus the matrix <span class="MathJax_Preview"><script type="math/tex">
 A
 </script>
-</span> is separated into 2 blocks: 2 diagonal blocks that correspond to the weight matrix (block <span class="MathJax_Preview"><script type="math/tex">
+</span> is separated into 2 blocks: 2 blocks on the diagonal that correspond to the weight matrix (block <span class="MathJax_Preview"><script type="math/tex">
 1,1
 </script>
 </span>) and the bias (block <span class="MathJax_Preview"><script type="math/tex">
 2,2
 </script>
-</span>), and 2 cross-terms that explicit their interactions.
+</span>), and 2 cross-terms that explicit their interactions. 
 </p>
 <p class="Indented">
-TODO motivate the separation of <span class="MathJax_Preview"><script type="math/tex">
-W
-</script>
-</span> and <span class="MathJax_Preview"><script type="math/tex">
-b
-</script>
-</span> (for instance we can remark that the magnitude of <span class="MathJax_Preview"><script type="math/tex">
-\mathbb{E}\left[h_{l}h_{l}^{T}\right]
-</script>
-</span> will probably be very different of <span class="MathJax_Preview"><script type="math/tex">
-1
-</script>
-</span>).
+We will see that separating the bias gives a nicer interpretation with a covariance matrix (as opposed to non-centered statistics).
 </p>
 <p class="Indented">
 We can now use the property <span class="MathJax_Preview"><script type="math/tex">
@@ -564,7 +564,7 @@ We can now use the property <span class="MathJax_Preview"><script type="math/tex
 </span>. <span class="MathJax_Preview"><script type="math/tex">
 B^{-1}
 </script>
-</span> can be be further simplified, so the next part is to obtain an expression for <span class="MathJax_Preview"><script type="math/tex">
+</span> can not be be further simplified, so the next part is to obtain an expression for <span class="MathJax_Preview"><script type="math/tex">
 A^{-1}
 </script>
 </span>:
@@ -616,7 +616,7 @@ C=\mathbb{E}\left[\left(h_{l}-\mathbb{E}\left[h_{l}\right]\right)\left(h_{l}-\ma
 </span>. It is centered (we substract <span class="MathJax_Preview"><script type="math/tex">
 \mathbb{E}\left[h_{l}\right]
 </script>
-</span>) which follows from the block matrix inversion, which in turns follows from the fact that we separated the bias. This motivates the use of centered statistics in second order inspired algorithms.
+</span>) which follows from the block matrix inversion formula, which in turns follows from the fact that we separated the bias. This motivates the use of centered statistics in second order inspired algorithms.
 </p>
 <h1 class="Section">
 Writing the update
@@ -729,7 +729,7 @@ b
 Updating the weight matrix <span class="MathJax_Preview"><script type="math/tex">
 W
 </script>
-</span>
+</span><a class="Label" name="subsec:Updating-the-weight"> </a>
 </h2>
 <p class="Unindented">
 The new update for <span class="MathJax_Preview"><script type="math/tex">
@@ -893,3 +893,4 @@ References
 </p>
 
 </p>
+
